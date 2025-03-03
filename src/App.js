@@ -14,17 +14,17 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from 'react';
 function App() {
 
-  const [isAuthenticated,SetIsSuthenticated] =useState(false);
+  const [isAuthenticated,SetAuthenticated] =useState(false);
 
-  function setAuthentication(){
-    setAuthentication(true)
+  function setAuth(){
+    SetAuthenticated(true)
   }
   return (
     <BrowserRouter>
       {isAuthenticated && <Header />}
 
       <Routes>
-        <Route path='/' element={<Login />}/>
+        <Route path='/' element={<Login  setAuth={setAuth}/>}/>
         <Route path='signup' element={<SignUp />} />
         <Route path='category' element={<Category />} />
         <Route path='home' element={<Home />} >

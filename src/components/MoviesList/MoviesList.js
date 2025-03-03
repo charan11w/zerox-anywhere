@@ -47,7 +47,11 @@ function MoviesList() {
   const fetchMoviesAxios = async () => {
     setLoading2(true)
     try {
-      const response = await axios.get('https://224d7812-d914-48aa-b3d4-d127da9b7f0a.mock.pstmn.io')
+      const response = await axios.get('https://224d7812-d914-48aa-b3d4-d127da9b7f0a.mock.pstmn.io',
+        {
+          "Authorization":`Bearer ${localStorage.getItem('access_token')}`
+        }
+      )
       console.log('api response', response.data)
       const data=response.data
       setMovies(data)
