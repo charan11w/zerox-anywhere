@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 function SignUp() {
 
   const [username, setUserName] = useState()
@@ -32,7 +31,7 @@ function SignUp() {
     console.log(pass)
     if (!name || !pass) {
       setMessage('please enter name and password');
-    }else {
+    } else {
       console.log('hello')
       setUserName('')
       setPassword('')
@@ -44,10 +43,10 @@ function SignUp() {
             "email": "nico@gmail.com",
             "password": `${pass}`,
             "avatar": "https://picsum.photos/800",
-          } 
+          }
         )
-        localStorage.setItem('username',response.data.name)
-        localStorage.setItem('password',response.data.password)
+        localStorage.setItem('username', response.data.name)
+        localStorage.setItem('password', response.data.password)
         navigate('/')
       } catch (error) {
         console.log('hi')
@@ -78,12 +77,12 @@ function SignUp() {
             value={password}
             onChange={getUserPassword}
           />
-          <div className="login-cont">
-            <button id="login-btn" onClick={createUser}>
-              {loading ? 'Loading...' : 'Create'}
-            </button>
-          </div>
         </div>
+        <div className="login-cont">
+            <div id="login-btn" onClick={createUser}>
+              {loading ? <img src={Spinner} className="spin" alt="Loading..." /> : "Create"}
+            </div>
+          </div>
         <div className="remain-cont">
           <div className="or-btn">
             OR

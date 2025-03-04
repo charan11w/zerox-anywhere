@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import Spinner from '../../images/tube.svg';
 function Login({setAuth}) {
 
   const [username, setUserName] = useState()
   const [password, setPassword] = useState()
+  const [loading,setLoading] = useState(false)
   const [message, setMessage] = useState()
 
   const navigate=useNavigate()
@@ -30,6 +31,7 @@ function Login({setAuth}) {
         setMessage('please enter corret details')
     }else{
 
+      setLoading(true)
       const response=await axios.post('https://api.escuelajs.co/api/v1/auth/login',
         {
           "email": "john@mail.com",
@@ -38,6 +40,7 @@ function Login({setAuth}) {
       )
       localStorage.setItem('access_token',response.data.access_token)
       localStorage.setItem('refresh_token',response.data.refresh_token)
+      setLoading(false)
       setAuth()
       navigate('home')
     }
@@ -55,7 +58,9 @@ function Login({setAuth}) {
           <label for='password' className="pass-word">Password</label>
           <input id='password' placeholder="Enter your password" type="password" onChange={getUserPassword}/>
           <div className="login-cont">
-          <button id="login-btn" onClick={authenticateUser}>Login</button>
+          <div id="login-btn" onClick={authenticateUser}>
+            {loading ? <img src={Spinner} className="spin" alt="Loading..." /> : 'Login'}
+          </div>
           </div>
         </div>
         <div className="remain-cont">

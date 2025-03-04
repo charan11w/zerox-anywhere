@@ -29,15 +29,21 @@
   margin-bottom: 8px;
 }
 #login-btn{
-  border: none;
-  background-color: rgb(28, 90, 214);
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  margin-top:10px;
-  padding: 15px 75px;
-    font-size: 20px;
+  
+    padding: 10px 40px;  /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0089ff;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
+}
+#login-btn:hover{
+  box-shadow: 2px 2px 9px 1px rgba(0, 0, 0);
 }
 .sign-up{
   background-color: red;
@@ -79,12 +85,19 @@
   flex-direction: column;
 }
 
-#user,#password{
+#user, #password {
   padding: 7px;
-    font-size: 18px;
-    border-radius: 5px;
-    border-width: 2px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid gray;  /* Default border */
+  outline: none;  /* Remove default browser outline */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Apply blue border and shadow when input is focused (active) */
+#user:focus, #password:focus {
+  border: 1px solid rgb(40, 153, 214);  /* ✅ 1px blue border */
+  box-shadow: 0px 0px 5px 2px rgba(119, 187, 231, 0.5);  /* ✅ Blue shadow */
 }
 
 .title-f{
@@ -95,8 +108,10 @@
 .login-cont{
   display:flex;
   justify-content: center;
-  margin-top: 27px;
+  align-items: center;
+  margin-top: 27px;    
 }
+
 .remain-cont{
   padding:25px;
   padding-top:0px;
@@ -125,4 +140,35 @@
   text-align: center;
   color: red;
   padding-bottom: 5px;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.25;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.form-cont {
+  animation: slide-in 900ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.spin {
+  width: 25px; /* ✅ Ensure it's visible */
+  height: 25px;
+  animation: spin 600ms linear infinite;
 }
