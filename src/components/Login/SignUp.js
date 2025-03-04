@@ -1,6 +1,7 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Spinner from '../../images/tube.svg';
 function SignUp() {
 
   const [username, setUserName] = useState()
@@ -8,6 +9,14 @@ function SignUp() {
   const [message, setMessage] = useState()
   const [loading, setLoading] = useState()
   const navigate = useNavigate()
+  
+  const firstFocus=useRef(null);
+
+  useEffect(() => {
+    if(firstFocus.current){
+      firstFocus.current.focus()
+    }
+  },[])
 
   const getUserName = (event) => {
     const userName = event.target.value
@@ -68,6 +77,8 @@ function SignUp() {
             placeholder="Enter your username"
             value={username}
             onChange={getUserName}
+            autoComplete="off"
+            ref={firstFocus}
           />
           <label for='password' className="pass-word">Password</label>
           <input

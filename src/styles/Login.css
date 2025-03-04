@@ -92,6 +92,11 @@
   border: 1px solid gray;  /* Default border */
   outline: none;  /* Remove default browser outline */
   transition: all 0.3s ease-in-out;
+
+}
+
+#password{
+  flex:1;
 }
 
 /* Apply blue border and shadow when input is focused (active) */
@@ -171,4 +176,9 @@
   width: 25px; /* ✅ Ensure it's visible */
   height: 25px;
   animation: spin 600ms linear infinite;
+}
+
+.pass-cont{
+  position: relative;
+  display: flex;
 }
