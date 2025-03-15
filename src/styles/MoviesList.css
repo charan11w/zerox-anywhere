@@ -1,0 +1,68 @@
+.cinema-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:300px;
+  border:1px solid black;
+  padding:20px;
+  margin:30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0.8px rgb(0,0,0);
+  position: relative
+}
+
+.close-s{
+  position: absolute;
+  top:15px;
+  right:18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+}
+
+.no-m{
+  font:bold 25px arial;
+  text-align: center;
+  padding:40px;
+
+}
+
+.mother-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adms{
+  text-align: center;
+  font:bold 20px arial;
+}
+
+#movieName,#movieTitle{
+  padding:8px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.cinema{
+  width:250px;
+  height:375px;
+}
+.imgSizes{
+  width:222px;
+  height:340px
+}
+.cinema-add-btn{
+  display: flex;
+  justify-content: center;
+  margin-top:26px;
+}
+
+.cinema-add-btn button{
+  border:none;
+  background-color: rgb(0, 132, 255);
+  color: white;
+  font:bold 18px arial;
+  padding:10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0.5px rgb(0,0,0);
+}

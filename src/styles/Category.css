@@ -1,0 +1,76 @@
+
+
+
+.category-back {
+  background-color: rgba(231, 231, 231, 0.756);
+  min-height: 100vh; /* Make sure it covers the full viewport height */
+  display: flex;
+  flex-direction: column;
+  padding:50px;
+}
+
+.filter {
+  background-color: white;
+  box-shadow: 1px 1px 10px 0.7px rgb(42, 42, 42);
+  border-radius: 10px;
+  padding: 30px;
+  flex-grow: 1; /* Makes it take remaining space */
+  min-height: calc(100vh - 60px); /* Ensures it extends initially */
+  font: bold 30px arial;
+  color:rgb(19, 115, 240)
+}
+
+.movie-cont{
+  padding:20px;
+}
+.second-cont{
+  background-color: white;
+  padding:10px;
+  border-radius: 10px;
+}
+
+.movie-title{
+  padding:10px;
+  font:bold 20px arial;
+  padding-bottom:0px;
+}
+.action-title{
+  padding:10px;
+  padding-top: 5px;
+  font:17px arial;
+  color: grey;
+}
+.buttons-cont{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.showTimings,.delete-mv{
+  border: none;
+  background-color: blue;
+  color: white;
+  font: bold  15px arial;
+  padding:5px 9px;
+  border-radius: 5px;
+}
+
+.delete-mv{
+  background-color: red;
+}
+
+
+.may{
+  background-color: rgb(231, 231, 232);
+  border-radius: 10px;
+  margin-top:20px;
+  box-shadow: 1px 1px 5px 0.5px rgb(0,0,0);
+}
+.cinema{
+  width:250px;
+  border-radius: 10px;
+}
+.img-cont{
+  display: flex;
+  justify-content: center;
+}
+

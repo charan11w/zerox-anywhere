@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import cartLogo from '../../images/cart.png'
+import { useContext } from "react";
+import { dataCreation } from "../../App";
 
 function Header() {
+  const{add}=useContext(dataCreation)
   const logo = 'https://e1.pngegg.com/pngimages/681/624/png-clipart-naruto-logos-naruto-anime-logo-thumbnail.png'
   return (
     <div className="app">
@@ -22,6 +26,13 @@ function Header() {
         </Link>
       </ul>
       <div className="cart">
+        <Link to='cart' className="cat">
+          <div className="logo-cont">
+            <img src={cartLogo} className="cart-logo" />
+            <div className="cart-counter">{add}</div>
+          </div>
+         
+        </Link>
         <Link to='support' className="cat">
           <button className="bt">
             Support

@@ -71,6 +71,8 @@
 
 .cart{
   margin-right:50px;
+  display: flex;
+  row-gap: 10px;
 }
 
 .bt{
@@ -132,16 +134,25 @@
   background-color: rgb(53, 137, 222);
  }
 
- .support{
-  font-size:60px;
-  color: rgb(17, 134, 229);
+
+ .cart-logo{
+  margin-right:20px;
+  width:50px;
+ }
+ .logo-cont {
+  position: relative; /* Parent should be relative */
+  display: inline-block;
+}
+
+.cart-counter {
+  position: absolute; /* Child positioned relative to .logo-cont */
+  top: 17% ;/* Adjust to move slightly up */
+  right: 50%; /* Adjust to move slightly right */
+  color:white;
+  font-size: 12px;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height:350px;
-  background-color: rgb(33, 33, 33);
- }
- .sub-r{
-  background-color: red;
- }
+  padding: 4px 4px;
+  border-radius: 50%;
+  min-width: 20px;
+  text-align: center;
+}

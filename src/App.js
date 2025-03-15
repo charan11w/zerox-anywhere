@@ -9,17 +9,24 @@ import Buy from './components/Buy/Buy';
 import Support from './components/Support/Support';
 import Sub from './components/Home/Sub/Sub';
 import Login from './components/Login/Login';
-import SignUp from './components/Login/SignUp'
+import SignUp from './components/Login/SignUp';
+import Cart from './components/Cart/Cart';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useState } from 'react';
+import { createContext, useState } from 'react';
+
+export const dataCreation = createContext(null);
 function App() {
 
-  const [isAuthenticated,SetAuthenticated] =useState(false);
+  const [add, setAdd] = useState(0);
+  const [isAuthenticated,SetAuthenticated] =useState(JSON.parse(sessionStorage.getItem('isauthenticated')) || false);
 
   function setAuth(){
     SetAuthenticated(true)
+    sessionStorage.setItem('isauthenticated',true)
   }
   return (
+    <dataCreation.Provider value={{ add, setAdd }}>
+
     <BrowserRouter>
       {isAuthenticated && <Header />}
 
@@ -33,9 +40,11 @@ function App() {
         <Route path='activity' element={<Movies />} />
         <Route path='sell' element={<Sell />} />
         <Route path='buy' element={<Buy />}></Route>
+        <Route path='cart' element={<Cart />} />
         <Route path='support' element={<Support />}></Route>
       </Routes>
     </BrowserRouter>
+    </dataCreation.Provider>
   );
 }
 
