@@ -1,0 +1,19 @@
+.no-items{
+  text-align: center;
+  font:40px arial;
+}
+
+.items-det{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.item-check{
+  text-align: center;
+  font-size: 35px;
+}
+
+.revi{
+  list-style-type: none;
+  
+}

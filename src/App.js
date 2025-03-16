@@ -16,16 +16,25 @@ import { createContext, useState } from 'react';
 
 export const dataCreation = createContext(null);
 function App() {
-
-  const [add, setAdd] = useState(0);
+  const [cart,setCart]=useState([])
+  const[added,setAdded]=useState({})
   const [isAuthenticated,SetAuthenticated] =useState(JSON.parse(sessionStorage.getItem('isauthenticated')) || false);
 
   function setAuth(){
     SetAuthenticated(true)
     sessionStorage.setItem('isauthenticated',true)
   }
+
+
+  const addToCart=(item) => {
+    setCart((pre) => [...pre,item])
+  }
+
+  const removeFromCart=(index) => {
+    setCart((pre) => pre.filter((ele,i) => i !==index))
+  }
   return (
-    <dataCreation.Provider value={{ add, setAdd }}>
+    <dataCreation.Provider value={{ cart,addToCart,removeFromCart,added,setAdded }}>
 
     <BrowserRouter>
       {isAuthenticated && <Header />}
@@ -39,7 +48,7 @@ function App() {
         </Route>
         <Route path='activity' element={<Movies />} />
         <Route path='sell' element={<Sell />} />
-        <Route path='buy' element={<Buy />}></Route>
+        <Route path='buy' element={<Buy />} />
         <Route path='cart' element={<Cart />} />
         <Route path='support' element={<Support />}></Route>
       </Routes>

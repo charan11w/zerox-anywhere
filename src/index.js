@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 import './styles/Category.css'
 import './styles/Login.css'
+import './styles/Buy.css'
 import './styles/MoviesList.css'
+import './styles/Cart.css'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

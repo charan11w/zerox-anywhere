@@ -1,0 +1,49 @@
+.items{
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.buy-cont{
+  padding:10px;
+}
+.size-img{
+  width:120px;
+}
+
+.buy-items{
+  box-shadow: 0px 0px 5px 0.7px rgb(0,0,0);
+  padding:20px;
+}
+.item-title{
+  text-align: center;
+}
+.add-btn{
+  border-radius: 10px;
+  border: none;
+  background-color: blue;
+  color: white;
+  margin-top:10px;
+  padding:5px 9px;
+}
+
+.sub-cont{
+  padding:20px 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.sub-cont:hover{
+  box-shadow: 0px 0px 5px 0.5px rgb(0,0,0)
+}
+
+.cart-check{
+  padding:10px;
+}
+.butn-cont{
+  display: flex;
+  justify-content: center;
+}

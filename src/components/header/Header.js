@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { dataCreation } from "../../App";
 
 function Header() {
-  const{add}=useContext(dataCreation)
+  const{cart}=useContext(dataCreation)
   const logo = 'https://e1.pngegg.com/pngimages/681/624/png-clipart-naruto-logos-naruto-anime-logo-thumbnail.png'
   return (
     <div className="app">
@@ -29,7 +29,7 @@ function Header() {
         <Link to='cart' className="cat">
           <div className="logo-cont">
             <img src={cartLogo} className="cart-logo" />
-            <div className="cart-counter">{add}</div>
+            <div className="cart-counter">{cart.length}</div>
           </div>
          
         </Link>
