@@ -7,13 +7,48 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  box-shadow: 0px 0px 5px 0.7px rgb(0,0,0);
 }
-.item-check{
+.total-check{
   text-align: center;
   font-size: 35px;
+  box-shadow: 0px 0px 5px 0.7px rgb(0,0,0);
 }
 
-.revi{
-  list-style-type: none;
-  
+.rem-item{
+  border-radius: 10px;
+  border: none;
+  background-color: red;
+  color: black;
+  margin-top:10px;
+  padding:5px 9px;
+}
+
+.csName{
+  padding:10px;
+}
+.cart-check{
+  padding:10px;
+}
+.shop-cont{
+  margin-top:10px;
+}
+.no-item{
+  text-align: center;
+  font:20px arial;
+  color: red;
+}
+.checkout-s{
+  text-align: start;
+  padding-left:30px;
+  font-size: 20px;
+}
+
+.order-items{
+  border-radius: 10px;
+  padding: 5px 10px;;
+  border: none;
+  background-color: rgb(225, 170, 74);
+  margin-top:10px;
+  text-align: center;
 }
